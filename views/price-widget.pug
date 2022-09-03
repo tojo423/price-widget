@@ -1,0 +1,68 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="/static/styles/price-widget.css")
+        style.
+            body {
+                width: #{query.widgetWidth + "px"};
+                height: #{query.widgetHeight + "px"};
+            }
+
+            .content {
+                border-color: #{query.bordersColor};
+                border-width: #{query.bordersThickness + "px"};
+                border-radius: #{query.outerBorderRadius + "px"};
+            }
+
+            .product-name {
+                background-color: #{query.nameBackgroundColor};
+                color: #{query.nameTextColor};
+                font-size: #{query.nameTextSize + "rem"};
+                
+            }
+
+            .store-logo {
+                border-color: #{query.bordersColor};
+                border-width: #{query.bordersThickness + "px"};
+            }
+
+            .buy-button {
+                border-color: #{query.bordersColor};
+                border-width: #{query.bordersThickness + "px"};
+                background-color: #{query.buyBackgroundColor};
+                color: #{query.buyTextColor};
+                font-size: #{query.buyTextSize + "rem"};
+            }
+
+            .product-price {
+                border-color: #{query.bordersColor};
+                border-width: #{query.bordersThickness + "px"};
+
+                background-image: linear-gradient(to right, #{query.priceBackgroundColorLeft} , #{query.priceBackgroundColorRight});
+                color: #{query.priceTextColor};
+                -webkit-text-stroke-color: #{query.priceTextStrokeColor};
+                font-size: #{query.priceTextSize + "rem"};
+            }
+
+            .price-panel {
+                border-color: #{query.bordersColor};
+                border-width: #{query.bordersThickness + "px"};
+            }
+
+            .content {
+                box-shadow: 0 0 #{query.outerGlowBlurRadius + "px"} #{query.outerGlowColor};
+            }
+    body 
+        div.content
+            div.left-panel
+                img.store-logo(src=query.leftIconUrl)
+            div.right-panel
+                div.product-name=  product.name
+                div.price-panel
+                    div.product-price= (query.pricePrefixEnabled == "on" ? "Price: " : "") + product.price + " "
+                    button.buy-button #{query.buyText}
+                        img(src="https://img.icons8.com/ios/2x/external-link-squared.png" width="16px" height="16px")

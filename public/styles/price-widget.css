@@ -1,0 +1,99 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    width: 384px;
+    height: 128px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.left-panel {
+    height: 100%;
+}
+
+.right-panel {
+    display: grid;
+    grid-template-areas: 'product-name'
+        'price-panel';
+    grid-template-rows: 75% 25%;
+    height: 100%;
+}
+
+.store-logo {
+    height: 100%;
+    border-right: 3px solid rgba(27, 26, 26, 0.933);
+}
+
+.product-name {
+    grid-area: 'product-name';
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    font-style: bold;
+    width: 100%;
+    height: 100%;
+}
+
+.price-panel {
+    grid-area: 'product-price';
+    display: grid;
+    grid-template-areas: 'left right';
+    grid-template-columns: 60% 40%;
+    border-top: 3px solid rgba(27, 26, 26, 0.933);
+}
+
+.buy-button {
+    background: none;
+    border: none;
+    background-color: yellow;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.buy-button img {
+    margin-left: 5px;
+}
+
+.product-price {
+    border-right: 3px solid rgba(27, 26, 26, 0.933);
+    width: 100%;
+   
+    font-size: 1.1rem;
+    font-weight: 900;
+    /* padding-top: 20px; */
+    /* text-align: right; */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgb(26, 67, 111) , red);
+    padding-left: 10px;
+    color: white;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    border: 3px solid rgba(27, 26, 26, 0.933);
+    border-radius: 10px;
+    display: grid;
+    grid-template-areas: 'left right';
+    grid-template-rows: 100%;
+    grid-template-columns: auto auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+    box-shadow: 0 0 10px rgba(27, 26, 26, 0.933);
+    overflow: hidden;
+    
+}
