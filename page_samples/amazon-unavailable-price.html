@@ -1,0 +1,364 @@
+<div id="buybox">
+  <div
+    id="outOfStockBuyBox_feature_div"
+    class="celwidget"
+    data-feature-name="outOfStockBuyBox"
+    data-csa-c-id="7i5n9v-fszkwq-7d6zxu-bd9hk"
+    data-cel-widget="outOfStockBuyBox_feature_div"
+  >
+    <div class="a-section">
+      <form
+        method="post"
+        id="addToCart"
+        action="/gp/product/handle-buy-box/ref=dp_start-bbf_1_glance"
+        class="a-content"
+      >
+        <input
+          type="hidden"
+          name="CSRF"
+          value="g5Y10vMqc7gVLTt6Ot+CwWRR8uCFwXlXhOmSWyMSlZHAAAAADAAAAABjGdaWcmF3AAAAABVX8CwXqz4nuL9RKX///w=="
+        />
+        <input
+          type="hidden"
+          id="anti-csrftoken-a2z"
+          name="anti-csrftoken-a2z"
+          value="g0zG3AJPUW9sDdDgHE9w4MPLAwee/l2JVgEcIP6oa3mVAAAADAAAAABjGdaWcmF3AAAAABVX8CwXqz4nuL9RKf///w=="
+        />
+        <input
+          type="hidden"
+          id="offerListingID"
+          name="offerListingID"
+          value=""
+        />
+        <input
+          type="hidden"
+          id="session-id"
+          name="session-id"
+          value="131-6981473-8286540"
+        />
+        <input type="hidden" id="ASIN" name="ASIN" value="B07PXGQC1Q" />
+        <input
+          type="hidden"
+          id="isMerchantExclusive"
+          name="isMerchantExclusive"
+          value="0"
+        />
+        <input type="hidden" id="merchantID" name="merchantID" value="" />
+        <input type="hidden" id="isAddon" name="isAddon" value="0" />
+        <input type="hidden" id="nodeID" name="nodeID" value="" />
+        <input
+          type="hidden"
+          id="sellingCustomerID"
+          name="sellingCustomerID"
+          value=""
+        />
+        <input type="hidden" id="qid" name="qid" value="1662637711" />
+        <input type="hidden" id="sr" name="sr" value="1-2" />
+        <input type="hidden" id="storeID" name="storeID" value="electronics" />
+        <input type="hidden" id="tagActionCode" name="tagActionCode" value="" />
+        <input type="hidden" id="viewID" name="viewID" value="glance" />
+        <input type="hidden" id="rebateId" name="rebateId" value="" />
+        <input
+          type="hidden"
+          id="ctaDeviceType"
+          name="ctaDeviceType"
+          value="desktop"
+        />
+        <input
+          type="hidden"
+          id="ctaPageType"
+          name="ctaPageType"
+          value="detail"
+        />
+        <input
+          type="hidden"
+          id="usePrimeHandler"
+          name="usePrimeHandler"
+          value="0"
+        />
+
+        <input
+          type="hidden"
+          id="rsid"
+          name="rsid"
+          value="131-6981473-8286540"
+        />
+        <input
+          type="hidden"
+          id="sourceCustomerOrgListID"
+          name="sourceCustomerOrgListID"
+          value=""
+        />
+        <input
+          type="hidden"
+          id="sourceCustomerOrgListItemID"
+          name="sourceCustomerOrgListItemID"
+          value=""
+        />
+        <input type="hidden" name="wlPopCommand" value="" />
+        <div id="outOfStock" class="a-box">
+          <div class="a-box-inner">
+            <div class="a-section a-spacing-small a-text-center">
+              <span class="a-color-price a-text-bold"
+                >Currently unavailable.</span
+              >
+              <br />We don't know when or if this item will be back in stock.
+              <span
+                class="a-declarative"
+                data-action="dpContextualIngressPt"
+                data-csa-c-type="widget"
+                data-csa-c-func-deps="aui-da-dpContextualIngressPt"
+                data-dpcontextualingresspt="{}"
+                data-csa-c-id="3f74lu-o6jvji-yxzqks-7wh5ec"
+              >
+                <a class="a-link-normal" href="#">
+                  <div class="a-row a-spacing-small">
+                    <div class="a-column a-span12 a-text-left">
+                      <div id="contextualIngressPt">
+                        <div id="contextualIngressPtPin"></div>
+                        <span
+                          id="contextualIngressPtLabel"
+                          class="cip-a-size-small"
+                        >
+                          <div id="contextualIngressPtLabel_deliveryShortLine">
+                            <span>Deliver to&nbsp;</span><span>Pakistan</span>
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </span>
+            </div>
+            <hr aria-hidden="true" class="a-spacing-base a-divider-normal" />
+            <script>
+              function atwlEarlyClick(e) {
+                e.preventDefault();
+                if (window.atwlLoaded) {
+                  return; //if JS is loaded then we can ignore the early click case
+                }
+                var ADD_TO_LIST_FROM_DETAIL_PAGE_VENDOR_ID =
+                  "website.wishlist.detail.add.earlyclick";
+
+                var paramMap = {
+                  asin: "B07PXGQC1Q",
+                  vendorId: ADD_TO_LIST_FROM_DETAIL_PAGE_VENDOR_ID,
+                  isAjax: "false",
+                };
+
+                var url = "/hz/wishlist/additemtolist?ie=UTF8";
+
+                for (var param in paramMap) {
+                  url += "&" + param + "=" + paramMap[param];
+                }
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", url, false);
+                xhr.setRequestHeader(
+                  "anti-csrftoken-a2z",
+                  "gwwf/nHjfsYsuMwSVRRM46Hs0oNZYM7kqc8j2wPiK4z3AAAAAQAAAABjGdaWcmF3AAAAAHuL9oHQYR32uqP6iUf9gA=="
+                );
+                xhr.onload = function () {
+                  window.location = xhr.responseURL; //Needed to force a redirect; not supported on IE!
+                };
+                xhr.send();
+              }
+            </script>
+            <style type="text/css">
+              #wl-main-inline-wrapper {
+                display: grid;
+                border-radius: 3px 0 0 3px;
+                border: 1px solid;
+                border-color: #adb1b8 #a2a6ac #8d9096;
+              }
+
+              #wl-main-inline-wrapper #wishListMainButton {
+                border: none;
+              }
+            </style>
+            <div id="wishlistButtonStack" class="a-button-stack">
+              <div
+                id="add-to-wishlist-button-group"
+                data-csa-c-func-deps="aui-da-a-button-group"
+                data-csa-c-type="widget"
+                data-csa-interaction-events="click"
+                data-hover="<!-- If PartialItemStateWeblab is true then, showing different Add-to-wish-list tool-tip message which is consistent with Add-to-Cart tool tip message.  -->
+To Add to Your List, choose from options to the left"
+                class="a-button-group a-declarative a-spacing-none"
+                data-action="a-button-group"
+                role="radiogroup"
+                data-csa-c-id="5wzz88-h9dugf-uz4mmh-aql1jn"
+              >
+                <span
+                  id="wishListMainButton"
+                  class="a-button a-button-groupfirst a-spacing-none a-button-base a-declarative"
+                  role="radio"
+                  data-action="add-wishlist-declarative"
+                  aria-posinset="1"
+                  aria-setsize="1"
+                  ><span class="a-button-inner"
+                    ><a
+                      href="https://www.amazon.com/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Faw%2Fd%2FB07PXGQC1Q&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.assoc_handle=usflex&amp;openid.mode=checkid_setup&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;"
+                      name="submit.add-to-registry.wishlist.unrecognized"
+                      title="Add to List"
+                      data-hover="<!-- If PartialItemStateWeblab is true then, showing different Add-to-wish-list tool-tip message which is consistent with Add-to-Cart tool tip message.  -->
+To Add to Your List, choose from options to the left"
+                      class="a-button-text a-text-left"
+                    >
+                      Add to List
+                    </a></span
+                  ></span
+                >
+              </div>
+              <div id="atwl-inline-spinner" class="a-section a-hidden">
+                <div class="a-spinner-wrapper">
+                  <span class="a-spinner a-spinner-medium"></span>
+                </div>
+              </div>
+              <div id="atwl-inline" class="a-section a-spacing-none a-hidden">
+                <div class="a-row a-text-ellipsis">
+                  <div
+                    id="atwl-inline-sucess-msg"
+                    class="a-box a-alert-inline a-alert-inline-success"
+                    aria-live="polite"
+                    aria-atomic="true"
+                  >
+                    <div class="a-box-inner a-alert-container">
+                      <i class="a-icon a-icon-alert"></i>
+                      <div class="a-alert-content">
+                        <span class="a-size-base" role="alert"> Added to </span>
+                      </div>
+                    </div>
+                  </div>
+                  <a
+                    id="atwl-inline-link"
+                    class="a-link-normal"
+                    href="/gp/registry/wishlist/"
+                  >
+                    <span
+                      id="atwl-inline-link-text"
+                      class="a-size-base"
+                      role="alert"
+                    >
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div id="atwl-inline-error" class="a-section a-hidden">
+                <div
+                  class="a-box a-alert-inline a-alert-inline-error"
+                  role="alert"
+                >
+                  <div class="a-box-inner a-alert-container">
+                    <i class="a-icon a-icon-alert"></i>
+                    <div class="a-alert-content">
+                      <span
+                        id="atwl-inline-error-msg"
+                        class="a-size-base"
+                        role="alert"
+                      >
+                        Unable to add item to List. Please try again.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="atwl-dd-spinner-holder" class="a-section a-hidden">
+                <div class="a-row a-dropdown">
+                  <div class="a-section a-popover-wrapper">
+                    <div class="a-section a-text-center a-popover-inner">
+                      <div class="a-box a-popover-loading">
+                        <div class="a-box-inner"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="atwl-dd-error-holder" class="a-section a-hidden">
+                <div class="a-section a-dropdown">
+                  <div class="a-section a-popover-wrapper">
+                    <div
+                      class="a-section a-spacing-base a-padding-base a-text-left a-popover-inner"
+                    >
+                      <h3 class="a-color-error">Sorry, there was a problem.</h3>
+                      <span>
+                        There was an error retrieving your Wish Lists. Please
+                        try again.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="atwl-dd-unavail-holder" class="a-section a-hidden">
+                <div class="a-section a-dropdown">
+                  <div class="a-section a-popover-wrapper">
+                    <div
+                      class="a-section a-spacing-base a-padding-base a-text-left a-popover-inner"
+                    >
+                      <h3 class="a-color-error">Sorry, there was a problem.</h3>
+                      <span> List unavailable. </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <script type="a-state" data-a-state='{"key":"atwl"}'>
+                {"showInlineLink":false,"hzPopover":true,"wishlistButtonId":"add-to-wishlist-button","dropDownHtml":"","inlineJsFix":true,"wishlistButtonSubmitId":"add-to-wishlist-button-submit","maxAjaxFailureCount":"3","asin":"B07PXGQC1Q"}
+              </script>
+            </div>
+            <script type="a-state" data-a-state='{"key":"popoverState"}'>
+              {"formId":"addToCart","showWishListDropDown":false,"wishlistPopoverWidth":206,"isAddToWishListDropDownAuiEnabled":true,"showPopover":false}
+            </script>
+            <div
+              class="aok-hidden"
+              data-amazon-lists-csrf-token="gwwf/nHjfsYsuMwSVRRM46Hs0oNZYM7kqc8j2wPiK4z3AAAAAQAAAABjGdaWcmF3AAAAAHuL9oHQYR32uqP6iUf9gA=="
+            ></div>
+            <script type="text/javascript">
+              (function (f) {
+                var _np = window.P._namespace("list-CF-register-js");
+                if (_np.guardFatal) {
+                  _np.guardFatal(f)(_np);
+                } else {
+                  f(_np);
+                }
+              })(function (P) {
+                "use strict";
+
+                window.P.now("atwl-cf").execute(function (module) {
+                  var isRegistered = typeof module !== "undefined";
+                  if (!isRegistered) {
+                    window.P.register("atwl-cf");
+                  }
+                });
+              });
+            </script>
+            <style type="text/css">
+              .registry-button-width {
+                width: 100%;
+                margin-left: ;
+                margin-right: ;
+              }
+
+              .add-to-baby-button-spacing-bottom {
+                margin-bottom: 0;
+              }
+            </style>
+          </div>
+        </div>
+        <input
+          data-addnewaddress="add-new"
+          id="cartAddressNew"
+          name="dropdown-selection"
+          type="hidden"
+          value="add-new"
+          class="nav-progressive-attribute"
+        /><input
+          data-addnewaddress="add-new"
+          id="cartAddressUsed"
+          name="dropdown-selection-ubb"
+          type="hidden"
+          value="add-new"
+          class="nav-progressive-attribute"
+        />
+      </form>
+    </div>
+  </div>
+</div>

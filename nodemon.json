@@ -1,0 +1,20 @@
+{
+  "verbose": "true",
+  "ignore": [
+    [
+      "./scraper/tmp/*",
+      "scraper/tmp/*",
+      "scraper/tmp",
+      "./scraper/tmp",
+      "**/scraper/tmp/**",
+      "*/scraper/tmp/**",
+      "**/scraper/tmp/*",
+      "scraper/tmp/**",
+      "./scraper/tmp/**",
+      "tmp",
+      "tmp/*",
+      "tmp/**",
+      "**/tmp/**"
+    ]
+  ]
+}

@@ -1,0 +1,130 @@
+doctype html
+html(lang="en", style="/*background: rgb(34, 34, 34);*/")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        //- link(rel="stylesheet", href="/static/styles/generator.css")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js")
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.6/dist/css/uikit.min.css" />
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+        style.
+            .hljs {
+                background: none !important;
+                word-wrap: normal;
+                white-space: pre-wrap;
+                overflow-wrap: anywhere;
+                max-height: 100px;
+                overflow-y: scroll;
+                padding-right: 13px !important;
+            }
+
+            *[opaque-on-hover] {
+                opacity: 50%;
+                z-index: 500;
+            }
+
+            *[opaque-on-hover]:hover {
+                opacity: 100%;
+            }
+    body(style="height: 700px; padding: 10px;")
+        div.uk-container.uk-height-1-1
+            h2 Price Widget Generator
+            div.uk-grid.uk-height-1-1
+                div.uk-inline(class="uk-width-1-1@s uk-width-1-2@m uk-first-column uk-margin-bottom")
+                    <a id="reset-settings-button" class="uk-position-top-right uk-icon-button uk-margin-small-top uk-margin-small-right uk-box-shadow-small uk-button-danger" uk-icon="icon: trash" opaque-on-hover></a>
+                    form#settings-form.uk-form-horizontal.uk-panel-scrollable.uk-resize-vertical.uk-padding-small(style="height: 550px !important;", onSubmit="event.preventDefault()")
+                        
+                        
+                        h3 General"
+
+                        div.uk-margin.uk-animation-shake
+                            label.uk-form-label(for="product-url-input") Product URL
+                            div.uk-form-controls
+                                div.uk-inline
+                                    <span class="uk-form-icon" uk-icon="icon: link"></span>
+                                    input#product-url-input.uk-input.uk-form-width-large(type="text", name="productUrl" placeholder="https://www.somestore.com/...")
+                        
+                        div.uk-alert Supported Stores: Amazon, Walmart, BestBuy, newegg
+
+
+                        <hr class="">
+
+                        h3 Price Text
+
+                        //- div.uk-margin
+                        //-     span.uk-form-label Enabled
+                        //-     div.uk-form-controls.uk-form-controls-text
+                        //-         label
+                        //-             input#borders-enabled-input.uk-checkbox(type="checkbox", name="bordersEnabled", checked=true)
+                        
+                        div.uk-margin
+                            label.uk-form-label(for="buy-text-input") Font Family
+                            div.uk-form-controls
+                                select#buy-text-input.uk-select(type="text", name="fontFamily", value="Arial")
+                                    option(value="Arial" style="font-family: Arial;") Arial
+                                    option(value="Verdana" style="font-family: Arial;") Verdana
+                                    option(value="Tahoma" style="font-family: Arial;") Tahoma
+                                    option(value="Trebuchet MS" style="font-family: Arial;") Trebuchet MS 
+                                    option(value="Times New Roman" style="font-family: Arial;") Times New Roman
+                                    option(value="Georgia" style="font-family: Arial;") Georgia
+                                    option(value="Garamond" style="font-family: Arial;") Garamond
+                                    option(value="Courier New" style="font-family: Arial;") Courier New 
+                                    option(value="Brush Script MT" style="font-family: Arial;") Brush Script MT
+
+                        div.uk-margin
+                            label.uk-form-label(for="borders-color-input") Color
+                            div.uk-form-controls
+                                input#borders-color-input.uk-input(type="color", name="color")
+
+                        div.uk-margin
+                            label.uk-form-label(for="name-text-size-input") Font Size
+                            div.uk-form-controls.uk-form-controls-text
+                                input#name-text-size-input.uk-range(type="range" name="fontSize" min="0" max="4" value="1" step="0.1" unit="x")
+
+
+                div(class="uk-width-1-1@s uk-width-1-2@m")
+                    div(class="uk-card uk-card-default uk-card-body uk-width-1-1")
+                        h3 Preview
+                        div.uk-container
+                            iframe#preview-frame.uk-width-1-1(src="http://localhost:3000/price-widget?productUrl=&bordersColor=%2523000000&bordersThickness=2&outerBorderRadius=10&outerGlowEnabled=on&outerGlowColor=%2523000000&nameBackgroundColor=%2523000000&nameTextColor=%2523000000&nameTextSize=1&priceBackgroundColorLeft=%2523000000&priceBackgroundColorRight=%2523000000&priceTextColor=%2523000000&priceTextStrokeColor=%2523000000&priceTextSize=1&buyBackgroundColor=%2523000000&buyTextColor=%2523000000&buyTextSize=1&buyTextStrokeColor=%2523000000", frameborder="0", style="") 
+
+                        //- form.uk-form-horizontal
+                        //-     div.uk-margin
+                        //-         label.uk-form-label(for="embed-code-input") Embed Code
+                        //-         div.uk-form-controls
+                        //-             textarea#embed-code-input.uk-textarea.uk-form-width-large(name="productUrl" rows="10" placeholder="Some text...")
+
+                        h3 Embed Code
+                        div.uk-margin
+                            pre.uk-width-expand
+                                code#code-block.language-html
+                                        | &lt;div&gt;
+                                        |   &lt;h1 some-prop="hello"&gt;Hello!&lt;/h1&gt;
+                                        | &lt;/div&gt;
+
+
+                        form.uk-form-horizontal
+                            div.uk-margin
+                                span.uk-form-label Generate on update
+                                div.uk-form-controls.uk-form-controls-text
+                                    label
+                                        input#auto-update-input.uk-checkbox(type="checkbox", name="bordersEnabled", checked=true)
+
+                        div.uk-margin
+                            button#generate-button.uk-button.uk-button-primary.uk-button-large.uk-text-nowrap.uk-animation-scale-up(class="uk-width-1-2@s")
+                                span(uk-icon="icon: cog")
+                                span  Generate!
+                            button#copy-button.uk-button.uk-button-secondary.uk-button-large.uk-text-nowrap(class="uk-width-1-2@s")
+                                span(uk-icon="icon: copy")
+                                span  Copy
+
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.6/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.6/dist/js/uikit-icons.min.js"></script>
+        script(src="/static/js/uk-range-plugin.js") 
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
+        script(src="/static/js/generator-v2.js")
