@@ -23,31 +23,38 @@ class AmazonScraper {
   }
 
   getProductPrice(url) {
-    return JSDOM.fromURL(url, {
-      referrer: "https://www.amazon.com/",
-      includeNodeLocations: true,
-      storageQuota: 10000000,
-      pretendToBeVisual: true,
-      userAgent:
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36",
-      cookieJar: new jsdom.CookieJar(),
-    }).then((dom) => {
-      const document = dom.window.document;
+    try {
+      return JSDOM.fromURL(url, {
+        referrer: "https://www.amazon.com/",
+        includeNodeLocations: true,
+        //storageQuota: 10000000,
+        pretendToBeVisual: true,
+        userAgent:
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36",
+        cookieJar: new jsdom.CookieJar(),
+      }).then((dom) => {
+        const document = dom.window.document;
 
-      const qualifiedBuyBoxDiv = document.querySelector(
-        this.qualifiedBuyBoxDivSelector
-      );
+        const qualifiedBuyBoxDiv = document.querySelector(
+          this.qualifiedBuyBoxDivSelector
+        );
 
-      if (!qualifiedBuyBoxDiv) {
-        return "N/A";
-      }
+        if (!qualifiedBuyBoxDiv) {
+          return "N/A";
+        }
 
-      const priceDiv = qualifiedBuyBoxDiv.querySelector(this.priceDivSelector);
+        const priceDiv = qualifiedBuyBoxDiv.querySelector(
+          this.priceDivSelector
+        );
 
-      const price = priceDiv.textContent;
+        const price = priceDiv.textContent;
 
-      return price;
-    });
+        return price;
+      });
+    } catch (error) {
+      console.log("[Amazon Scraper] Failed to scrape product price", error);
+      return Promise.resolve("N/A");
+    }
   }
 }
 

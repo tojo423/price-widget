@@ -13,6 +13,8 @@ const bestBuyScraper = new BestBuyScraper();
 const neweggScraper = new NeweggScraper();
 const walmartScraper = new WalmartScraper();
 
+const priceCache = {};
+
 const app = express();
 app.set("view engine", "pug");
 app.set("views", "./views"); // ! relative to project root
@@ -56,26 +58,31 @@ app.get("/price-widget-v2", async (req, res) => {
 
   const hostname = productUrlObj.hostname;
   let productPrice;
-  switch (hostname) {
-    case "www.amazon.com":
-      productPrice = await amazonScraper.getProductPrice(productUrl);
-      break;
-    case "www.newegg.com":
-      console.log("[price-widget] newegg URL detected");
-      productPrice = await neweggScraper.getProductPrice(productUrl);
-      break;
-    case "www.walmart.com":
-      productPrice = await walmartScraper.getProductPrice(productUrl);
-      if (productPrice.includes("Now")) {
-        productPrice = productPrice.slice(3);
-      }
-      break;
-    case "www.bestbuy.com":
-      productPrice = await bestBuyScraper.getProductPrice(productUrl);
-      break;
-    default:
-      return res.send("Store not recognized");
-      break;
+
+  if (priceCache[url]) {
+    return priceCache[url];
+  } else {
+    switch (hostname) {
+      case "www.amazon.com":
+        productPrice = await amazonScraper.getProductPrice(productUrl);
+        break;
+      case "www.newegg.com":
+        console.log("[price-widget] newegg URL detected");
+        productPrice = await neweggScraper.getProductPrice(productUrl);
+        break;
+      case "www.walmart.com":
+        productPrice = await walmartScraper.getProductPrice(productUrl);
+        if (productPrice.includes("Now")) {
+          productPrice = productPrice.slice(3);
+        }
+        break;
+      case "www.bestbuy.com":
+        productPrice = await bestBuyScraper.getProductPrice(productUrl);
+        break;
+      default:
+        return res.send("Store not recognized");
+        break;
+    }
   }
 
   res.render("price-widget-v2", { query, productPrice });
